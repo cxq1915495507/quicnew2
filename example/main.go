@@ -133,7 +133,7 @@ func setupHandler(www string, trace bool) http.Handler {
 			w.Write(ff)
 		}
 		io.WriteString(w, "<html><head><style>img{width:40px;height:40px;}</style></head><body>")
-		for i := 0; i < 80000; i++ {
+		for i := 0; i < 60000; i++ {
 			fmt.Fprintf(w, `<img src="/demo/tile?cachebust=%d">`, i)
 		}
 		io.WriteString(w, "</body></html>")
