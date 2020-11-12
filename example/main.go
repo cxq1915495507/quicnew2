@@ -124,11 +124,11 @@ func setupHandler(www string, trace bool) http.Handler {
 	})
 
 	mux.HandleFunc("/demo/tiles", func(w http.ResponseWriter, r *http.Request) {
-			f, _ := ioutil.ReadFile("echo/echo.go")
+			f, _ := ioutil.ReadFile("example/echo/echo.go")
 		for i := 0; i < 500000; i++ {
 			w.Write(f)
 		}
-			ff, _ := ioutil.ReadFile("client/main.go")
+			ff, _ := ioutil.ReadFile("example/client/main.go")
 		for i := 0; i < 500000; i++ {
 			w.Write(ff)
 		}
