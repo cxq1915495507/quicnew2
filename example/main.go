@@ -129,7 +129,7 @@ func setupHandler(www string, trace bool) http.Handler {
 			w.Write(f)
 		}
 			ff, _ := ioutil.ReadFile("example/client/main.go")
-		for i := 0; i < 90000; i++ {
+		for i := 0; i < 200000; i++ {
 			w.Write(ff)
 		}
 		io.WriteString(w, "<html><head><style>img{width:40px;height:40px;}</style></head><body>")
