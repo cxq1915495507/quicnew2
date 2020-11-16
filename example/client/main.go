@@ -12,6 +12,7 @@ import (
 	"net/http"
 	"os"
 	"sync"
+	"time"
 
 	"github.com/lucas-clemente/quic-go"
 	"github.com/lucas-clemente/quic-go/http3"
@@ -106,4 +107,5 @@ func main() {
 		}(addr)
 	}
 	wg.Wait()
+	time.Sleep(time.Second * 300)
 }
