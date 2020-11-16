@@ -125,15 +125,15 @@ func setupHandler(www string, trace bool) http.Handler {
 
 	mux.HandleFunc("/demo/tiles", func(w http.ResponseWriter, r *http.Request) {
 			f, _ := ioutil.ReadFile("example/echo/echo.go")
-		for i := 0; i < 200000; i++ {
+		for i := 0; i < 1; i++ {
 			w.Write(f)
 		}
 			ff, _ := ioutil.ReadFile("example/client/main.go")
-		for i := 0; i < 200000; i++ {
+		for i := 0; i < 1; i++ {
 			w.Write(ff)
 		}
 		io.WriteString(w, "<html><head><style>img{width:40px;height:40px;}</style></head><body>")
-		for i := 0; i < 60000; i++ {
+		for i := 0; i < 1; i++ {
 			fmt.Fprintf(w, `<img src="/demo/tile?cachebust=%d">`, i)
 		}
 		io.WriteString(w, "</body></html>")
